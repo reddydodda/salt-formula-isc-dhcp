@@ -1,0 +1,4 @@
+{%- from "isc_dhcp/map.jinja" import server with context %}
+
+# Command line options here
+DHCPDARGS=" {% for interface in server.interfaces %}{{ interface.name }}{% if not loop.last %} {% endif %}{% endfor %}"

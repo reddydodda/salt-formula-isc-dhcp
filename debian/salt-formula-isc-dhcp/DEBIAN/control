@@ -1,0 +1,10 @@
+Package: salt-formula-isc-dhcp
+Version: 0.3
+Architecture: all
+Maintainer: Jan Kaufman <jan.kaufman@tcpcloud.eu>
+Installed-Size: 37
+Section: admin
+Priority: optional
+Homepage: http://www.tcpcloud.eu
+Description: isc-dhcp salt formula
+ Install and configure isc-dhcp server
