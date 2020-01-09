@@ -58,6 +58,20 @@ isc_dhcp_packages:
 
 {%- endif %}
 
+{%- if server.failover_config is defined %}
+
+{{ server.failover_config }}:
+  file.managed:
+  - source: salt://isc_dhcp/files/dhcpd.failover
+  - template: jinja
+  - mode: 644
+  - require:
+    - pkg: isc_dhcp_packages
+  - watch_in:
+    - service: isc_dhcp_service
+
+{%- endif %}
+
 isc_dhcp_service:
   service.running:
   - name: {{ server.service }}

@@ -2,7 +2,7 @@ Package: salt-formula-isc-dhcp
 Version: 0.3
 Architecture: all
 Maintainer: Jan Kaufman <jan.kaufman@tcpcloud.eu>
-Installed-Size: 37
+Installed-Size: 38
 Section: admin
 Priority: optional
 Homepage: http://www.tcpcloud.eu

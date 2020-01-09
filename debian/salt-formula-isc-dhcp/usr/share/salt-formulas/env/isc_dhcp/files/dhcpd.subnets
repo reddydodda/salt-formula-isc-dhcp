@@ -3,17 +3,22 @@
 {%- for subnet_name, subnet in server.subnet.iteritems() %}
 
 subnet {{ subnet.network }} netmask {{ subnet.netmask }} {
-  {%- if subnet.range is defined %}
-  range {{ subnet.range }};
-  {%- endif %}
+  pool {
+         {%- if server.failover is defined %}
+         failover peer "{{ server.failover.name }}";
+         {%- endif %}
+	 {%- if subnet.range is defined %}
+	 range {{ subnet.range }};
+	 {%- endif %}
 
-  option subnet-mask {{ subnet.netmask }};
-  {%- if subnet.gateway is defined %}
-  option routers {{ subnet.gateway }};
-  {%- endif %}
-  {%- if subnet.pxeserver is defined %}
-  next-server {{ subnet.pxeserver }};
-  {%- endif %}
+	 option subnet-mask {{ subnet.netmask }};
+	 {%- if subnet.gateway is defined %}
+	 option routers {{ subnet.gateway }};
+	 {%- endif %}
+	 {%- if subnet.pxeserver is defined %}
+	 next-server {{ subnet.pxeserver }};
+	 {%- endif %}
+  }
 {%- if subnet.unknown_clients is defined %}
   {{ subnet.unknown_clients }} unknown-clients;
 {% endif %}

@@ -1,0 +1,18 @@
+{%- from "isc_dhcp/map.jinja" import server with context %}
+
+{%- if server.failover is defined %}
+failover peer "{{ server.failover.name }}" {
+         {{ server.failover.role }};
+         address {{ server.failover.primary_address }};
+         port {{ server.failover.port|deafult('647') }};
+         peer address {{ server.failover.secondary_address }};
+         peer port {{ server.failover.peer_port|deafult('647') }};
+         max-response-delay {{ server.failover.max_response_delay|deafult('60') }};
+         max-unacked-updates {{ server.failover.max_unacked_updates|deafult('10') }};
+         mclt {{ server.failover.mclt|deafult('3600') }};
+         split {{ server.failover.split|deafult('128') }};
+         load balance max seconds {{ server.failover.load_balance_max_seconds|deafult('3') }};
+}
+
+{%- endif %}
+
