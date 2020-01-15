@@ -1,3 +1,7 @@
+salt-formula-isc-dhcp (0.3.1) trusty; urgency=medium
+  
+  * add DHCP HA failover
+
 salt-formula-isc-dhcp (0.3) trusty; urgency=medium
 
   * add tests

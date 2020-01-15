@@ -1,12 +1,12 @@
 Source: salt-formula-isc-dhcp
-Maintainer: Jan Kaufman <jan.kaufman@tcpcloud.eu>
+Maintainer: Chandra Dodda <cdodda@mirantis.com>
 Section: admin
 Priority: optional
 Build-Depends: debhelper (>= 9), salt-master, python, python-yaml
 Standards-Version: 3.9.6
-Homepage: http://www.tcpcloud.eu
-Vcs-Browser: https://github.com/tcpcloud/salt-formula-isc-dhcp
-Vcs-Git: https://github.com/tcpcloud/salt-formula-isc-dhcp.git
+Homepage: http://www.mirantis.com
+Vcs-Browser: https://github.com/reddydodda/salt-formula-isc-dhcp
+Vcs-Git: https://github.com/reddydodda/salt-formula-isc-dhcp.git
 
 Package: salt-formula-isc-dhcp
 Architecture: all
